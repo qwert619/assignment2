@@ -38,13 +38,13 @@ void BMI::setWeight(){
 
 void BMI::calculateBMI(){
     if (bmi < 18.5)
-        cout << "Underweight";
+        cout << "Underweight\n";
     if (bmi >= 18.5 && bmi < 24.9)
-        cout << "Normal";
+        cout << "Normal\n";
     if (bmi >= 25 && bmi < 29.9)
-        cout << "Overweight";
+        cout << "Overweight\n";
     if (bmi >= 30)
-        cout << "Obese";
+        cout << "Obese\n";
 }
 
 int main(){
