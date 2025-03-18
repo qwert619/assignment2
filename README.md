@@ -1,2 +1,2 @@
 # assignment2
-# This program will
+This program will
