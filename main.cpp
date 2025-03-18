@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
-
+#include <cmath>
 
 using namespace std;
 
 class BMI{
 public:
-    int height;
-    int weight;
-    int bmi;
+    double height;
+    double weight;
+    double bmi;
 
     BMI();
     void setBMI();
@@ -24,16 +24,23 @@ BMI::BMI(){
 
 void BMI::setBMI(){
     bmi = weight / (height * height);
+    bmi = bmi * 10;
+    bmi = round(bmi);
+    bmi = bmi / 10;
+    cout << "Your BMI is: " << bmi << endl;
 }
 
 void BMI::setHeight(){
-    cout << "Enter your height in feet: ";
+    cout << "Example 5 feet 10 inches\n";
+    cout << "Enter your feet: ";
     cin >> height;
+    height = height * 0.025;
 }
 
 void BMI::setWeight(){
     cout << "Enter your weight in pounds: ";
     cin >> weight;
+    weight = weight * 0.45;
 }
 
 void BMI::calculateBMI(){
