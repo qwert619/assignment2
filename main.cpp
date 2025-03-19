@@ -32,7 +32,7 @@ void BMI::setBMI(){
 
 void BMI::setHeight(){
     double feet, inches;
-    cout << "Example 5 feet 10 inches\n";
+    cout << "Example: 5 feet 10 inches\n";
     
     cout << "Enter your feet: ";
     while (!(cin >> feet) || feet <= 0){
@@ -62,20 +62,32 @@ void BMI::setWeight(){
 
 void BMI::calculateBMI(){
     if (bmi < 18.5)
-        cout << "Underweight\n";
+        cout << "Underweight\n\n";
     if (bmi >= 18.5 && bmi < 24.9)
-        cout << "Normal\n";
+        cout << "Normal\n\n";
     if (bmi >= 25 && bmi < 29.9)
-        cout << "Overweight\n";
+        cout << "Overweight\n\n";
     if (bmi >= 30)
-        cout << "Obese\n";
+        cout << "Obese\n\n";
 }
 
 int main(){
+    char choice;
+    cin.clear();
+    do{
     BMI user;
     user.setHeight();
     user.setWeight();
     user.setBMI();
     user.calculateBMI();
+    cout << "Would you like to calculate another BMI? (y/n): ";
+    
+    while (!(cin >> choice) || (choice != 'y' && choice != 'n')){
+        cout << "Invalid input. Please enter 'y' or 'n': ";
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
+    cout << endl;
+    } while (choice == 'y');
     return 0;
 }
