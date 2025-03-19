@@ -1,0 +1,10 @@
+^C:\USERS\EBM61\DOCUMENTS\ASSIGNMENT2-MAIN\ASSIGNMENT2\BUILD\CMAKEFILES\B20C595248CB4FD6C42AC588F4686233\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ebm61/Documents/assignment2-main/assignment2 -BC:/Users/ebm61/Documents/assignment2-main/assignment2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ebm61/Documents/assignment2-main/assignment2/build/assignment2.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
