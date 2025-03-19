@@ -31,15 +31,32 @@ void BMI::setBMI(){
 }
 
 void BMI::setHeight(){
+    double feet, inches;
     cout << "Example 5 feet 10 inches\n";
+    
     cout << "Enter your feet: ";
-    cin >> height;
+    while (!(cin >> feet) || feet <= 0){
+        cout << "Invalid input. Please enter a number: ";
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
+    cout << "Enter your inches: ";
+    while( !(cin >> inches) || !(inches >= 0 && inches < 12)){
+        cout << "Invalid input. Please enter a number: ";
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
+    height = (feet * 12) + inches;
     height = height * 0.025;
 }
 
 void BMI::setWeight(){
     cout << "Enter your weight in pounds: ";
-    cin >> weight;
+    while((!(cin >> weight) || weight <= 0)){
+        cout << "Invalid input. Please enter a number: ";
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
     weight = weight * 0.45;
 }
 
